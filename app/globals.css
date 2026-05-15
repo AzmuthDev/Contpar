@@ -1,0 +1,62 @@
+@import "tailwindcss" source(none);
+@source "./page.tsx";
+@source "./layout.tsx";
+@source "../components/ui/expand-map.tsx";
+
+@theme {
+  --color-bosch-red: #E20015;
+  --color-bosch-blue: #005691;
+  --color-bosch-dark: #191919;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Oswald", sans-serif;
+}
+
+:root {
+  --background: #191919;
+  --foreground: #ffffff;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .bg-dot-pattern {
+    background-image: radial-gradient(rgb(0, 0, 0) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .bg-dot-pattern-white {
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .eyebrow {
+    @apply font-display text-gray-400 uppercase tracking-[0.2em] text-xs mb-4 block font-semibold flex items-center gap-3;
+  }
+  .eyebrow span {
+    @apply w-8 h-px bg-bosch-red;
+  }
+
+  .tilt-card {
+    @apply border border-gray-800 bg-[#1E1E1E] p-8 hover:border-gray-600 transition-colors relative overflow-hidden;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center bg-bosch-red text-white font-display font-bold uppercase tracking-widest text-sm px-8 py-4 transition-all duration-300 rounded-[2px] shadow-[0_0_25px_rgba(226,0,21,0.3)] hover:shadow-[0_0_40px_rgba(226,0,21,0.5)] hover:-translate-y-1 overflow-hidden;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
