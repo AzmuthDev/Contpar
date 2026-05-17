@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { Settings2, Droplet, Cpu, ShieldCheck, Zap, MapPin, Phone } from "lucide-react";
+import { Droplet, Cpu, ShieldCheck, Zap, MapPin, Phone, Instagram } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LocationMap } from "@/components/ui/expand-map";
@@ -40,12 +40,9 @@ export default function Home() {
       {/* Header */}
       <header className="fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent bg-[#191919]/90 backdrop-blur-md py-6">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-bosch-red text-white flex items-center justify-center">
-              <Settings2 className="w-5 h-5" />
-            </div>
-            <div className="font-display text-2xl font-bold tracking-tight uppercase text-white">Contpar <span className="text-bosch-red">Direções</span></div>
-          </div>
+          <Link href="#inicio" className="flex items-center gap-3 transition-opacity hover:opacity-90">
+            <img src="/logo.png" alt="Contpar Direções" className="h-10 md:h-12 w-auto object-contain" />
+          </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-gray-400 uppercase font-display">
             <Link href="#inicio" className="hover:text-white transition-colors">Início</Link>
             <Link href="#servicos" className="hover:text-white transition-colors">Serviços</Link>
@@ -53,7 +50,10 @@ export default function Home() {
             <Link href="#contato" className="hover:text-white transition-colors">Contato</Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Link href="https://wa.me/5531999999999" target="_blank" className="btn-primary py-2.5 px-6 text-xs uppercase font-display">AGENDAR AGORA</Link>
+            <Link href="https://www.instagram.com/contpar_direcoes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+              <Instagram className="w-5 h-5" />
+            </Link>
+            <Link href="https://wa.me/553198590098" target="_blank" className="btn-primary py-2.5 px-6 text-xs uppercase font-display">AGENDAR AGORA</Link>
           </div>
         </div>
       </header>
@@ -97,7 +97,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Link href="https://wa.me/5531999999999" target="_blank" className="relative z-10 bg-[#111111] text-white font-display uppercase tracking-widest px-8 py-4 text-sm hover:bg-white hover:text-[#111111] transition-colors duration-300 w-full lg:w-auto text-center whitespace-nowrap flex-shrink-0">
+            <Link href="https://wa.me/553198590098" target="_blank" className="relative z-10 bg-[#111111] text-white font-display uppercase tracking-widest px-8 py-4 text-sm hover:bg-white hover:text-[#111111] transition-colors duration-300 w-full lg:w-auto text-center whitespace-nowrap flex-shrink-0">
               WHATSAPP
             </Link>
           </div>
@@ -110,7 +110,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-800">
             {[
               { label: "Localização", value: "CONTAGEM-MG" },
-              { label: "Experiência", value: "+20 ANOS" },
+              { label: "Experiência", value: "+10 ANOS" },
               { label: "Tecnologia", value: "BOSCH" },
               { label: "Garantia", value: "ORIGINAL" },
             ].map((stat, idx) => (
@@ -205,13 +205,24 @@ export default function Home() {
                   </div>
                   <div className="text-white">
                     <h4 className="font-display text-lg tracking-widest uppercase">Telefone</h4>
-                    <p className="text-gray-400">(31) 3392-1234<br/>(31) 9 9999-9999 (WhatsApp)</p>
+                    <p className="text-gray-400">(31) 3392-1234<br/>(31) 9 9859-0098 (WhatsApp)</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <div className="w-12 h-12 bg-gray-800 flex items-center justify-center flex-shrink-0">
+                    <Instagram className="text-bosch-red" />
+                  </div>
+                  <div className="text-white">
+                    <h4 className="font-display text-lg tracking-widest uppercase">Instagram</h4>
+                    <Link href="https://www.instagram.com/contpar_direcoes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="text-gray-400 hover:text-white transition-colors font-display tracking-wide uppercase text-sm">
+                      @contpar_direcoes
+                    </Link>
                   </div>
                 </div>
               </div>
 
               <div className="mt-12">
-                <Link href="https://wa.me/5531999999999" target="_blank" className="btn-primary w-full md:w-auto uppercase font-display">WHATSAPP</Link>
+                <Link href="https://wa.me/553198590098" target="_blank" className="btn-primary w-full md:w-auto uppercase font-display">WHATSAPP</Link>
               </div>
             </div>
             
@@ -243,7 +254,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Link href="https://wa.me/5531999999999" target="_blank" className="bg-[#111111] text-white font-display uppercase tracking-widest px-10 py-5 hover:bg-white hover:text-[#111111] transition-colors duration-300 inline-block">
+          <Link href="https://wa.me/553198590098" target="_blank" className="bg-[#111111] text-white font-display uppercase tracking-widest px-10 py-5 hover:bg-white hover:text-[#111111] transition-colors duration-300 inline-block">
             AGENDAR AGORA
           </Link>
         </div>
@@ -269,11 +280,8 @@ export default function Home() {
             <div>
               <h4 className="font-display text-white tracking-widest uppercase mb-6 font-display">Social</h4>
               <div className="flex gap-4">
-                <Link href="#" className="text-gray-500 hover:text-white transition-colors">
-                  IG
-                </Link>
-                <Link href="#" className="text-gray-500 hover:text-white transition-colors">
-                  FB
+                <Link href="https://www.instagram.com/contpar_direcoes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="w-10 h-10 bg-gray-900 hover:bg-bosch-red flex items-center justify-center transition-colors text-gray-400 hover:text-white group" aria-label="Instagram">
+                  <Instagram className="w-5 h-5" />
                 </Link>
               </div>
             </div>
