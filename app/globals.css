@@ -16,11 +16,18 @@
   --foreground: #ffffff;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 70px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
@@ -48,6 +55,10 @@ body {
   .btn-primary {
     @apply relative inline-flex items-center justify-center bg-bosch-red text-white font-display font-bold uppercase tracking-widest text-sm px-8 py-4 transition-all duration-300 rounded-[2px] shadow-[0_0_25px_rgba(226,0,21,0.3)] hover:shadow-[0_0_40px_rgba(226,0,21,0.5)] hover:-translate-y-1 overflow-hidden;
   }
+
+  .safe-area-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
 }
 
 @keyframes marquee {
@@ -59,4 +70,27 @@ body {
   display: flex;
   width: max-content;
   animation: marquee 30s linear infinite;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  .tilt-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Disable tilt effect on touch devices for better performance */
+  .tilt-card:hover {
+    transform: none !important;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
 }

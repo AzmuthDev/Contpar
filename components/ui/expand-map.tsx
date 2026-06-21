@@ -44,7 +44,11 @@ export function LocationMap({
   }
 
   const handleClick = () => {
-    setIsExpanded(!isExpanded)
+    if (!isExpanded) {
+      setIsExpanded(true)
+    } else {
+      window.open('https://www.google.com/maps/place/Contpar+Dire%C3%A7%C3%B5es+Hidr%C3%A1ulicas+Ltda/@-19.9591158,-44.0553976,17z/data=!4m15!1m8!3m7!1s0xa6be2e0f10f079:0x182305bb0bf25edf!2sR.+Rio+Tocantins,+1355+-+Riacho+das+Pedras,+Contagem+-+MG,+32280-170!3b1!8m2!3d-19.9591158!4d-44.0528227!16s%2Fg%2F11pdfk8fw_!3m5!1s0xa6be2e08b7a4b7:0x56f3b1892f388758!8m2!3d-19.9591158!4d-44.0528227!16s%2Fg%2F11ngjj8pwf?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D', '_blank')
+    }
   }
 
   return (
@@ -67,7 +71,7 @@ export function LocationMap({
           transformStyle: "preserve-3d",
         }}
         animate={{
-          width: isExpanded ? 400 : 280,
+          width: isExpanded ? "min(400px, calc(100vw - 40px))" : "min(280px, calc(100vw - 40px))",
           height: isExpanded ? 320 : 160,
         }}
         transition={{
@@ -90,85 +94,13 @@ export function LocationMap({
             >
               <div className="absolute inset-0 bg-[#111111]" />
 
-              <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                {/* Main roads - using foreground with opacity */}
-                <motion.line
-                  x1="0%"
-                  y1="35%"
-                  x2="100%"
-                  y2="35%"
-                  className="stroke-gray-700"
-                  strokeWidth="4"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                />
-                <motion.line
-                  x1="0%"
-                  y1="65%"
-                  x2="100%"
-                  y2="65%"
-                  className="stroke-gray-700"
-                  strokeWidth="4"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                />
-
-                {/* Vertical main roads */}
-                <motion.line
-                  x1="30%"
-                  y1="0%"
-                  x2="30%"
-                  y2="100%"
-                  className="stroke-gray-800"
-                  strokeWidth="3"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                />
-                <motion.line
-                  x1="70%"
-                  y1="0%"
-                  x2="70%"
-                  y2="100%"
-                  className="stroke-gray-800"
-                  strokeWidth="3"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                />
-
-                {/* Secondary streets */}
-                {[20, 50, 80].map((y, i) => (
-                  <motion.line
-                    key={`h-${i}`}
-                    x1="0%"
-                    y1={`${y}%`}
-                    x2="100%"
-                    y2={`${y}%`}
-                    className="stroke-gray-900"
-                    strokeWidth="1.5"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
-                  />
-                ))}
-              </svg>
-
-              {/* Buildings */}
-              <motion.div
-                className="absolute top-[40%] left-[10%] w-[15%] h-[20%] rounded-sm bg-gray-800/50 border border-gray-700/50"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.5 }}
+              <img 
+                src="/satellite-map.png" 
+                alt="Mapa de Satélite Contagem" 
+                className="absolute inset-0 w-full h-full object-cover opacity-80"
               />
-              <motion.div
-                className="absolute top-[15%] left-[35%] w-[12%] h-[15%] rounded-sm bg-gray-800/40 border border-gray-700/40"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.6 }}
-              />
+              
+              <div className="absolute inset-0 bg-black/20" />
 
               <motion.div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -303,16 +235,16 @@ export function LocationMap({
 
       {/* Click hint */}
       <motion.p
-        className="absolute -bottom-6 left-1/2 text-[10px] text-gray-500 whitespace-nowrap uppercase tracking-widest font-display"
+        className="absolute -bottom-6 left-1/2 text-[10px] text-gray-500 whitespace-nowrap uppercase tracking-widest font-display z-20"
         style={{ x: "-50%" }}
         initial={{ opacity: 0 }}
         animate={{
-          opacity: isHovered && !isExpanded ? 1 : 0,
+          opacity: isHovered ? 1 : 0,
           y: isHovered ? 0 : 4,
         }}
         transition={{ duration: 0.2 }}
       >
-        Clique para ver no mapa
+        {isExpanded ? "Clique para abrir no Google Maps" : "Clique para ver no mapa"}
       </motion.p>
     </motion.div>
   )
