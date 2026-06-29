@@ -6,13 +6,13 @@
 @theme {
   --color-bosch-red: #E20015;
   --color-bosch-blue: #005691;
-  --color-bosch-dark: #191919;
+  --color-bosch-dark: #0a1532;
   --font-sans: "Inter", sans-serif;
   --font-display: "Oswald", sans-serif;
 }
 
 :root {
-  --background: #191919;
+  --background: #0a1532;
   --foreground: #ffffff;
 }
 
@@ -49,7 +49,7 @@ body {
   }
 
   .tilt-card {
-    @apply border border-gray-800 bg-[#1E1E1E] p-8 hover:border-gray-600 transition-colors relative overflow-hidden;
+    @apply border border-blue-900/50 bg-[#101e45] p-8 hover:border-blue-700/50 transition-colors relative overflow-hidden;
   }
 
   .btn-primary {
