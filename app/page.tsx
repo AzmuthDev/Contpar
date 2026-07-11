@@ -447,109 +447,53 @@ export default function Home() {
       {/* Marcas Atendidas */}
       <section className="w-full bg-[#0a1230] border-y border-[#1a2550] py-6 md:py-8 overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            {/* Label */}
-            <div className="flex-shrink-0">
-              <h3 className="text-white/60 text-xs md:text-sm font-bold tracking-[0.25em] uppercase whitespace-nowrap">Marcas Atendidas</h3>
+          <div className="flex flex-col gap-8 md:gap-12">
+            {/* Top Row: Marcas Atendidas */}
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+              <div className="flex-shrink-0 md:w-56 text-center md:text-left">
+                <h3 className="text-white/60 text-base md:text-xl font-bold tracking-[0.25em] uppercase">Marcas Atendidas</h3>
+              </div>
+              <div className="hidden md:block w-px h-10 bg-white/15 flex-shrink-0"></div>
+              <div className="flex-1 overflow-hidden">
+                <div className="flex items-center justify-center md:justify-start">
+                  <img 
+                    src="/marcas-top.png" 
+                    alt="Marcas Atendidas" 
+                    className="w-full max-w-4xl object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              </div>
             </div>
-            {/* Divider */}
-            <div className="hidden md:block w-px h-10 bg-white/15 flex-shrink-0"></div>
-            {/* Brand Logos */}
-            <div className="flex-1 overflow-hidden">
-              <div className="flex items-center justify-center md:justify-start gap-6 sm:gap-8 md:gap-10 lg:gap-14 flex-wrap md:flex-nowrap">
-                {/* Mercedes-Benz */}
-                <div className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                  <svg viewBox="0 0 80 80" className="w-10 h-10 md:w-12 md:h-12" fill="none">
-                    <circle cx="40" cy="40" r="36" stroke="white" strokeWidth="2.5"/>
-                    <circle cx="40" cy="40" r="30" stroke="white" strokeWidth="1.5"/>
-                    <line x1="40" y1="10" x2="40" y2="40" stroke="white" strokeWidth="2"/>
-                    <line x1="40" y1="40" x2="14" y2="58" stroke="white" strokeWidth="2"/>
-                    <line x1="40" y1="40" x2="66" y2="58" stroke="white" strokeWidth="2"/>
-                  </svg>
-                </div>
-                {/* Volvo */}
-                <div className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                  <svg viewBox="0 0 80 80" className="w-10 h-10 md:w-12 md:h-12" fill="none">
-                    <circle cx="40" cy="40" r="34" stroke="white" strokeWidth="2.5"/>
-                    <line x1="40" y1="6" x2="55" y2="6" stroke="white" strokeWidth="2.5"/>
-                    <text x="40" y="45" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="Arial">VOLVO</text>
-                  </svg>
-                </div>
-                {/* Scania */}
-                <div className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                  <svg viewBox="0 0 90 40" className="w-16 h-8 md:w-20 md:h-10" fill="none">
-                    <rect x="2" y="2" width="86" height="36" rx="4" stroke="white" strokeWidth="2"/>
-                    <text x="45" y="26" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="Arial" letterSpacing="2">SCANIA</text>
-                  </svg>
-                </div>
-                {/* Volkswagen */}
-                <div className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                  <svg viewBox="0 0 80 80" className="w-10 h-10 md:w-12 md:h-12" fill="none">
-                    <circle cx="40" cy="40" r="36" stroke="white" strokeWidth="2.5"/>
-                    <path d="M22 20 L40 58 L58 20" stroke="white" strokeWidth="2.5" fill="none" strokeLinejoin="round"/>
-                    <path d="M28 20 L40 48 L52 20" stroke="white" strokeWidth="2.5" fill="none" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                {/* Iveco */}
-                <div className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                  <svg viewBox="0 0 100 40" className="w-16 h-7 md:w-20 md:h-9" fill="none">
-                    <text x="50" y="28" textAnchor="middle" fill="white" fontSize="22" fontWeight="900" fontFamily="Arial" letterSpacing="3">IVECO</text>
-                  </svg>
-                </div>
-                {/* Ford */}
-                <div className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                  <svg viewBox="0 0 100 45" className="w-14 h-7 md:w-18 md:h-9" fill="none">
-                    <ellipse cx="50" cy="22" rx="46" ry="20" stroke="white" strokeWidth="2"/>
-                    <text x="50" y="29" textAnchor="middle" fill="white" fontSize="20" fontWeight="bold" fontStyle="italic" fontFamily="Georgia, serif">Ford</text>
-                  </svg>
-                </div>
-                {/* Chevrolet */}
-                <div className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                  <svg viewBox="0 0 80 50" className="w-12 h-8 md:w-14 md:h-9" fill="none">
-                    <rect x="5" y="15" width="70" height="20" rx="2" stroke="white" strokeWidth="2"/>
-                    <rect x="20" y="18" width="40" height="14" rx="1" fill="white" opacity="0.2"/>
-                    <polygon points="25,22 35,22 33,28 23,28" fill="white"/>
-                    <polygon points="45,22 55,22 57,28 47,28" fill="white"/>
-                  </svg>
-                </div>
-                {/* Fiat */}
-                <div className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                  <svg viewBox="0 0 80 40" className="w-12 h-6 md:w-16 md:h-8" fill="none">
-                    <text x="40" y="30" textAnchor="middle" fill="white" fontSize="26" fontWeight="900" fontFamily="Arial" letterSpacing="4">FIAT</text>
-                  </svg>
+
+            {/* Bottom Row: Marcas que trabalhamos */}
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+              <div className="flex-shrink-0 md:w-56 text-center md:text-left">
+                <h3 className="text-white/60 text-base md:text-xl font-bold tracking-[0.25em] uppercase">Marcas que trabalhamos</h3>
+              </div>
+              <div className="hidden md:block w-px h-10 bg-white/15 flex-shrink-0"></div>
+              <div className="flex-1 overflow-hidden">
+                <div className="flex items-center justify-center md:justify-start">
+                  <img 
+                    src="/marcasqueelestrabalham.jpeg" 
+                    alt="Marcas que trabalhamos" 
+                    className="w-full max-w-4xl object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  />
                 </div>
               </div>
             </div>
           </div>
-          {/* Link */}
-          <div className="mt-4 md:mt-5 text-center md:text-left md:pl-[calc(theme(spacing.32)+theme(spacing.10))]">
-            <span className="text-sky-400 text-xs font-bold tracking-wider uppercase cursor-pointer hover:text-sky-300 transition-colors">
-              VER TODAS AS MARCAS →
-            </span>
-          </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-16 sm:py-20 md:py-32 bg-bosch-red relative overflow-hidden text-center">
-        <div className="absolute inset-0 opacity-10 bg-dot-pattern"></div>
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-          <h2 className="font-display text-3xl sm:text-5xl md:text-8xl font-black text-white leading-tight md:leading-[1.1] tracking-tight mb-4 sm:mb-6 md:mb-8 uppercase">
-            SEGURANÇA NÃO É<br/>OPCIONAL. É BOSCH.
-          </h2>
-          <div className="overflow-hidden whitespace-nowrap mb-8 sm:mb-12 flex justify-center">
-            <div className="animate-marquee">
-              <p className="font-display text-red-900 text-sm sm:text-base md:text-xl tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] font-bold pr-8 sm:pr-12 md:pr-16 uppercase">
-                A G E N D E   S U A   R E V I S Ã O   ·   P A D R Ã O   O R I G I N A L   ·   C O N T A G E M   M G   ·
-              </p>
-              <p className="font-display text-red-900 text-sm sm:text-base md:text-xl tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] font-bold pr-8 sm:pr-12 md:pr-16 uppercase">
-                A G E N D E   S U A   R E V I S Ã O   ·   P A D R Ã O   O R I G I N A L   ·   C O N T A G E M   M G   ·
-              </p>
-            </div>
-          </div>
-          <Link href="https://wa.me/553198590098" target="_blank" className="bg-[#071026] text-white font-display uppercase tracking-widest px-8 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm hover:bg-white hover:text-[#071026] transition-colors duration-300 inline-block">
-            AGENDAR AGORA
-          </Link>
+      {/* Bosch Diesel Service Banner */}
+      {/* Bosch Diesel Service Banner (User Provided Image) */}
+      <section className="bg-[#0d3a7b] py-12 sm:py-16 md:py-24 text-center">
+        <div className="max-w-screen-2xl mx-auto px-5 sm:px-6 flex justify-center perspective-1000">
+          <img 
+            src="/imagem_bosh_improved.jpeg" 
+            alt="Segurança Não é Opcional - Bosch" 
+            className="w-full max-w-7xl h-auto shadow-[15px_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[25px_30px_60px_rgba(0,0,0,0.7)] hover:-translate-y-2 hover:-translate-x-1 transition-all duration-500 ease-out rounded-md relative z-10"
+          />
         </div>
       </section>
 
