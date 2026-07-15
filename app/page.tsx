@@ -7,6 +7,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LocationMap } from "@/components/ui/expand-map";
 import { TiltCard } from "@/components/ui/tilt-card";
+import { Tilt } from "@/components/ui/tilt";
+import { Spotlight } from "@/components/ui/spotlight";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -54,7 +56,7 @@ export default function Home() {
       {/* Header */}
       <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-[#f4f4f4] border-b border-gray-300 py-2 md:py-2 overflow-hidden">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-8 flex justify-between items-center">
-          <Link href="#inicio" className="flex items-center transition-opacity hover:opacity-90 -ml-4 sm:-ml-12 md:-ml-32 pr-4 sm:pr-8 md:pr-16">
+          <Link href="#inicio" className="flex items-center transition-opacity hover:opacity-90 ml-0 sm:ml-2 md:ml-4 pr-4 sm:pr-8 md:pr-16">
             <img src="/contparlogosemfundo.jpeg" alt="Contpar Direções" className="h-16 sm:h-20 md:h-24 w-auto object-contain mix-blend-multiply scale-[1.3] sm:scale-[1.5] md:scale-[1.8] origin-left" style={{ filter: 'contrast(1.1) brightness(1.05)' }} />
           </Link>
           <nav className="hidden md:flex items-center gap-8 lg:gap-10 text-base font-bold tracking-wide text-[#2b3b8c] uppercase">
@@ -391,7 +393,11 @@ export default function Home() {
                   </div>
                   <div className="text-white">
                     <h4 className="font-display text-base sm:text-lg tracking-widest uppercase">Telefone</h4>
-                    <p className="text-gray-400 font-display tracking-wide text-xs sm:text-sm mt-1 sm:mt-2">(31) 3046-8770<br/>(31) 3046-8771<br/>(31) 9 9859-0098 (WhatsApp)</p>
+                    <p className="text-gray-400 font-display tracking-wide text-xs sm:text-sm mt-1 sm:mt-2 flex flex-col gap-1">
+                      <span>(31) 3046-8770</span>
+                      <span>(31) 3046-8771</span>
+                      <span className="flex items-center gap-1.5">(31) 9 9859-0098 <svg xmlns="http://www.svg.org/2000/svg" width="14" height="14" fill="currentColor" className="text-[#25D366]" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg></span>
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 sm:gap-6">
@@ -490,9 +496,9 @@ export default function Home() {
       <section className="bg-[#0d3a7b] py-12 sm:py-16 md:py-24 text-center">
         <div className="max-w-screen-2xl mx-auto px-5 sm:px-6 flex justify-center perspective-1000">
           <img 
-            src="/imagem_bosh_improved.jpeg" 
-            alt="Segurança Não é Opcional - Bosch" 
-            className="w-full max-w-7xl h-auto shadow-[15px_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[25px_30px_60px_rgba(0,0,0,0.7)] hover:-translate-y-2 hover:-translate-x-1 transition-all duration-500 ease-out rounded-md relative z-10"
+            src="/imagemtrilhabosch_nobg.png" 
+            alt="Trilha Bosch" 
+            className="w-full max-w-7xl h-auto rounded-lg shadow-2xl hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:-translate-y-2 transition-all duration-500 ease-out relative z-10"
           />
         </div>
       </section>
@@ -501,9 +507,40 @@ export default function Home() {
       <footer className="bg-[#04091a] border-t border-[#0a1532] pt-12 sm:pt-16 md:pt-20 pb-24 sm:pb-10">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12 md:mb-16">
-            <div className="col-span-2 text-white">
-              <div className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2 uppercase text-white">Contpar <span className="text-bosch-red">Direções</span></div>
-              <p className="font-display text-gray-600 tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-xs uppercase">PRECISÃO ALEMÃ EM CADA CURVA™</p>
+            <div className="col-span-2 text-white flex items-start">
+              <div className="group relative rounded-xl max-w-[280px]">
+                <Tilt
+                  rotationFactor={6}
+                  isRevese
+                  style={{
+                    transformOrigin: 'center center',
+                  }}
+                  springOptions={{
+                    stiffness: 26.7,
+                    damping: 4.1,
+                    mass: 0.2,
+                  }}
+                  className='rounded-xl'
+                >
+                  <Spotlight
+                    className='z-10 from-white/50 via-white/20 to-white/10 blur-2xl'
+                    size={200}
+                    springOptions={{
+                      stiffness: 26.7,
+                      damping: 4.1,
+                      mass: 0.2,
+                    }}
+                  />
+                  <div className="bg-white p-2 rounded-xl border border-white/10 shadow-2xl overflow-hidden flex items-center justify-center">
+                    <img
+                      src='/contparlogosemfundo.jpeg'
+                      alt='Contpar Direções'
+                      className='w-full h-auto object-contain scale-[1.15] grayscale duration-700 group-hover:grayscale-0'
+                      style={{ filter: 'contrast(1.1) brightness(1.05)' }}
+                    />
+                  </div>
+                </Tilt>
+              </div>
             </div>
             <div>
               <h4 className="font-display text-white tracking-widest uppercase mb-4 sm:mb-6 text-sm">Menu</h4>
@@ -525,7 +562,7 @@ export default function Home() {
           </div>
           <div className="border-t border-[#0a1532] pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between gap-2 text-[10px] sm:text-xs text-gray-700 font-mono">
             <p>&copy; 2026 Contpar Direções. Todos os direitos reservados.</p>
-            <p>PARCEIRO OFICIAL BOSCH CAR SERVICE</p>
+            <p>PARCEIRO OFICIAL BOSCH CENTRO DE DIREÇÕES</p>
           </div>
         </div>
       </footer>
