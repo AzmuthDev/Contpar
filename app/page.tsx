@@ -7,8 +7,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LocationMap } from "@/components/ui/expand-map";
 import { TiltCard } from "@/components/ui/tilt-card";
-import { Tilt } from "@/components/ui/tilt";
-import { Spotlight } from "@/components/ui/spotlight";
+
+const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className={className} viewBox="0 0 16 16">
+    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+  </svg>
+);
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -69,7 +73,10 @@ export default function Home() {
             <Link href="https://www.instagram.com/contpar_direcoes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="hidden sm:flex text-[#2b3b8c] hover:opacity-80 transition-opacity" aria-label="Instagram">
               <Instagram className="w-9 h-9 border-2 border-[#2b3b8c] rounded-md p-1.5" />
             </Link>
-            <Link href="https://wa.me/553198590098" target="_blank" className="bg-[#ed1c24] text-white hover:opacity-90 px-3 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 text-[11px] sm:text-sm md:text-base font-bold uppercase whitespace-nowrap">AGENDAR AGORA</Link>
+            <Link href="https://wa.me/553198590098" target="_blank" className="bg-[#ed1c24] text-white hover:opacity-90 px-3 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 text-[11px] sm:text-sm md:text-base font-bold uppercase whitespace-nowrap flex items-center justify-center gap-2">
+              AGENDAR AGORA
+              <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+            </Link>
             <button 
               className="md:hidden text-[#2b3b8c] p-1"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -91,7 +98,10 @@ export default function Home() {
             <Link href="#sobre" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-bosch-red transition-colors uppercase font-display tracking-widest text-xl">Sobre</Link>
             <Link href="#contato" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-bosch-red transition-colors uppercase font-display tracking-widest text-xl">Contato</Link>
             <div className="w-16 h-px bg-gray-700 my-2"></div>
-            <Link href="https://wa.me/553198590098" target="_blank" className="btn-primary py-2.5 px-6 text-xs uppercase font-display">Agendar Agora</Link>
+            <Link href="https://wa.me/553198590098" target="_blank" className="btn-primary py-2.5 px-6 text-xs uppercase font-display flex items-center justify-center gap-2">
+              AGENDAR AGORA
+              <WhatsAppIcon className="w-4 h-4" />
+            </Link>
             <Link href="https://www.instagram.com/contpar_direcoes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mt-4">
               <Instagram className="w-5 h-5" />
               <span className="text-sm font-display tracking-wider uppercase">@contpar_direcoes</span>
@@ -128,8 +138,9 @@ export default function Home() {
                 DIREÇÃO PESADA, COM BARULHO OU VAZAMENTO?<br/>RESOLVA AGORA.
               </h2>
             </div>
-            <Link href="https://wa.me/553198590098" target="_blank" className="relative z-10 bg-[#ed1c24] text-white font-bold uppercase px-8 sm:px-10 py-3 text-xs sm:text-sm hover:opacity-90 transition-opacity w-full md:w-auto text-center whitespace-nowrap flex-shrink-0">
+            <Link href="https://wa.me/553198590098" target="_blank" className="relative z-10 bg-[#ed1c24] text-white font-bold uppercase px-8 sm:px-10 py-3 text-xs sm:text-sm hover:opacity-90 transition-opacity w-full md:w-auto text-center whitespace-nowrap flex-shrink-0 flex items-center justify-center gap-2">
               WHATSAPP
+              <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
           </div>
         </div>
@@ -396,7 +407,7 @@ export default function Home() {
                     <p className="text-gray-400 font-display tracking-wide text-xs sm:text-sm mt-1 sm:mt-2 flex flex-col gap-1">
                       <span>(31) 3046-8770</span>
                       <span>(31) 3046-8771</span>
-                      <span className="flex items-center gap-1.5">(31) 9 9859-0098 <svg xmlns="http://www.svg.org/2000/svg" width="14" height="14" fill="currentColor" className="text-[#25D366]" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg></span>
+                      <span className="flex items-center gap-1.5">(31) 9 9859-0098 <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" /></span>
                     </p>
                   </div>
                 </div>
@@ -426,7 +437,10 @@ export default function Home() {
               </div>
 
               <div className="mt-8 sm:mt-12">
-                <Link href="https://wa.me/553198590098" target="_blank" className="btn-primary w-full sm:w-auto uppercase font-display text-xs sm:text-sm">WHATSAPP</Link>
+                <Link href="https://wa.me/553198590098" target="_blank" className="btn-primary w-full sm:w-auto uppercase font-display text-xs sm:text-sm flex items-center justify-center gap-2">
+                  WHATSAPP
+                  <WhatsAppIcon className="w-4 h-4" />
+                </Link>
               </div>
             </div>
             
@@ -508,38 +522,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12 md:mb-16">
             <div className="col-span-2 text-white flex items-start">
-              <div className="group relative rounded-xl max-w-[280px]">
-                <Tilt
-                  rotationFactor={6}
-                  isRevese
-                  style={{
-                    transformOrigin: 'center center',
-                  }}
-                  springOptions={{
-                    stiffness: 26.7,
-                    damping: 4.1,
-                    mass: 0.2,
-                  }}
-                  className='rounded-xl'
-                >
-                  <Spotlight
-                    className='z-10 from-white/50 via-white/20 to-white/10 blur-2xl'
-                    size={200}
-                    springOptions={{
-                      stiffness: 26.7,
-                      damping: 4.1,
-                      mass: 0.2,
-                    }}
+              <div className="max-w-[280px] sm:max-w-[320px]">
+                <Link href="#inicio" className="block w-full">
+                  <img
+                    src='/contparlogo_transparent.png'
+                    alt='Contpar Direções'
+                    className='w-full h-auto object-contain'
                   />
-                  <div className="bg-white p-2 rounded-xl border border-white/10 shadow-2xl overflow-hidden flex items-center justify-center">
-                    <img
-                      src='/contparlogosemfundo.jpeg'
-                      alt='Contpar Direções'
-                      className='w-full h-auto object-contain scale-[1.15] grayscale duration-700 group-hover:grayscale-0'
-                      style={{ filter: 'contrast(1.1) brightness(1.05)' }}
-                    />
-                  </div>
-                </Tilt>
+                </Link>
               </div>
             </div>
             <div>
