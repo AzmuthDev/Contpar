@@ -54,8 +54,8 @@ export default function Home() {
       {/* Header */}
       <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-[#f4f4f4] border-b border-gray-300 py-2 md:py-3 overflow-hidden">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-8 flex justify-between items-center">
-          <Link href="#inicio" className="flex items-center transition-opacity hover:opacity-90 -ml-40 md:-ml-52">
-            <img src="/contparlogosemfundo.jpeg" alt="Contpar Direções" className="h-20 md:h-32 w-auto object-contain mix-blend-multiply" style={{ filter: 'contrast(1.1) brightness(1.05)', transform: 'scale(2)', transformOrigin: 'left center' }} />
+          <Link href="#inicio" className="flex items-center transition-opacity hover:opacity-90 -ml-8 sm:-ml-12 md:-ml-52">
+            <img src="/contparlogosemfundo.jpeg" alt="Contpar Direções" className="h-16 sm:h-20 md:h-32 w-auto object-contain mix-blend-multiply" style={{ filter: 'contrast(1.1) brightness(1.05)', transform: 'scale(2)', transformOrigin: 'left center' }} />
           </Link>
           <nav className="hidden md:flex items-center gap-8 lg:gap-10 text-base font-bold tracking-wide text-[#2b3b8c] uppercase">
             <Link href="#inicio" className="hover:opacity-80 transition-opacity">Início</Link>
@@ -391,7 +391,7 @@ export default function Home() {
                   </div>
                   <div className="text-white">
                     <h4 className="font-display text-base sm:text-lg tracking-widest uppercase">Telefone</h4>
-                    <p className="text-gray-400 font-display tracking-wide text-xs sm:text-sm mt-1 sm:mt-2">(31) 3392-1234<br/>(31) 9 9859-0098 (WhatsApp)</p>
+                    <p className="text-gray-400 font-display tracking-wide text-xs sm:text-sm mt-1 sm:mt-2">(31) 3046-8770<br/>(31) 3046-8771<br/>(31) 9 9859-0098 (WhatsApp)</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 sm:gap-6">
