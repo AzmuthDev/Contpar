@@ -528,7 +528,7 @@ export default function Home() {
                   <img
                     src={FooterLogoBase64}
                     alt='Contpar Direções'
-                    className='w-full h-auto object-contain'
+                    className='w-full h-auto object-contain mix-blend-screen'
                   />
                 </Link>
               </div>
