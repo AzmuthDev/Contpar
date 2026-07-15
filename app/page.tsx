@@ -52,10 +52,10 @@ export default function Home() {
     <div className="min-h-screen font-sans">
       
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-[#f4f4f4] border-b border-gray-300 py-2 md:py-3 overflow-hidden">
+      <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-[#f4f4f4] border-b border-gray-300 py-2 md:py-2 overflow-hidden">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-8 flex justify-between items-center">
-          <Link href="#inicio" className="flex items-center transition-opacity hover:opacity-90 -ml-8 sm:-ml-12 md:-ml-52">
-            <img src="/contparlogosemfundo.jpeg" alt="Contpar Direções" className="h-16 sm:h-20 md:h-32 w-auto object-contain mix-blend-multiply" style={{ filter: 'contrast(1.1) brightness(1.05)', transform: 'scale(2)', transformOrigin: 'left center' }} />
+          <Link href="#inicio" className="flex items-center transition-opacity hover:opacity-90 -ml-4 sm:-ml-12 md:-ml-32 pr-4 sm:pr-8 md:pr-16">
+            <img src="/contparlogosemfundo.jpeg" alt="Contpar Direções" className="h-16 sm:h-20 md:h-24 w-auto object-contain mix-blend-multiply scale-[1.3] sm:scale-[1.5] md:scale-[1.8] origin-left" style={{ filter: 'contrast(1.1) brightness(1.05)' }} />
           </Link>
           <nav className="hidden md:flex items-center gap-8 lg:gap-10 text-base font-bold tracking-wide text-[#2b3b8c] uppercase">
             <Link href="#inicio" className="hover:opacity-80 transition-opacity">Início</Link>
@@ -63,11 +63,11 @@ export default function Home() {
             <Link href="#sobre" className="hover:opacity-80 transition-opacity">Sobre</Link>
             <Link href="#contato" className="hover:opacity-80 transition-opacity">Contato</Link>
           </nav>
-          <div className="flex items-center gap-3 lg:gap-5">
+          <div className="flex items-center gap-2 sm:gap-3 lg:gap-5">
             <Link href="https://www.instagram.com/contpar_direcoes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="hidden sm:flex text-[#2b3b8c] hover:opacity-80 transition-opacity" aria-label="Instagram">
               <Instagram className="w-9 h-9 border-2 border-[#2b3b8c] rounded-md p-1.5" />
             </Link>
-            <Link href="https://wa.me/553198590098" target="_blank" className="bg-[#ed1c24] text-white hover:opacity-90 px-6 py-2.5 md:px-8 md:py-3 text-sm md:text-base font-bold uppercase whitespace-nowrap">AGENDAR AGORA</Link>
+            <Link href="https://wa.me/553198590098" target="_blank" className="bg-[#ed1c24] text-white hover:opacity-90 px-3 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 text-[11px] sm:text-sm md:text-base font-bold uppercase whitespace-nowrap">AGENDAR AGORA</Link>
             <button 
               className="md:hidden text-[#2b3b8c] p-1"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
