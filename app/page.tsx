@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LocationMap } from "@/components/ui/expand-map";
 import { TiltCard } from "@/components/ui/tilt-card";
+import { FooterLogoBase64 } from "./logoBase64";
 
 const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className={className} viewBox="0 0 16 16">
@@ -525,7 +526,7 @@ export default function Home() {
               <div className="max-w-[280px] sm:max-w-[320px]">
                 <Link href="#inicio" className="block w-full">
                   <img
-                    src='/contparlogo_transparent.png'
+                    src={FooterLogoBase64}
                     alt='Contpar Direções'
                     className='w-full h-auto object-contain'
                   />
