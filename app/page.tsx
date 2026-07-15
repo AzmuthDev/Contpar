@@ -134,8 +134,8 @@ export default function Home() {
 
           {/* Call to Action Card */}
           <div className="bg-[#1e235e] relative w-full max-w-4xl p-5 sm:p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 mt-4 sm:mt-8">
-            <div className="relative z-10 w-full md:w-auto text-center md:text-left">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase leading-snug">
+            <div className="relative z-10 w-full md:w-auto text-center md:text-left flex-1">
+              <h2 className="text-base sm:text-lg md:text-xl font-bold text-white uppercase leading-snug lg:whitespace-nowrap">
                 DIREÇÃO PESADA, COM BARULHO OU VAZAMENTO?<br/>RESOLVA AGORA.
               </h2>
             </div>
@@ -522,8 +522,8 @@ export default function Home() {
       <footer className="bg-[#04091a] border-t border-[#0a1532] pt-12 sm:pt-16 md:pt-20 pb-24 sm:pb-10">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12 md:mb-16">
-            <div className="col-span-2 text-white flex items-start">
-              <div className="max-w-[280px] sm:max-w-[320px]">
+            <div className="col-span-2 text-white flex justify-center md:justify-start">
+              <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[320px]">
                 <Link href="#inicio" className="block w-full">
                   <img
                     src={FooterLogoBase64}
